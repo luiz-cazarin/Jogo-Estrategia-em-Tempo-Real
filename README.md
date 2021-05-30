@@ -8,7 +8,7 @@
 ### Escopo
 Para iniciar o jogo informe o nome, civilizacao e clique em **Criar novo jogo**<br>
 Os outros jogadores devem informar o nome, civilizacao clicar em **conectar a um jogo**<br>
-informar o **IP do computador que criu o jogo** e clicar em **Conectar**<br>
+informar o **IP do computador que criou o jogo** e clicar em **Conectar**<br>
 O jogador que criou o jogo deve **Iniciar o jogo** para iniciar para todos os jogadores<br>
 ### O jogo inicia contendo
 * 5 aldeões;

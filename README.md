@@ -1,4 +1,4 @@
-# Jogo-Estrategia-em-Tempo-Real
+# Jogo de Estrategia em Tempo Real
 ### Objetivo
 <p>
  Implementacao de um jogo de estrategia em tempo real multijogadores em rede<br>

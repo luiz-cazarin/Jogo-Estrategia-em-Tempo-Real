@@ -1,9 +1,7 @@
 package tela;
 
-// Projeto Final
-
-// Luiz Claudio dos Santos Cazarin Junior - UC19100111
-// Deyziane de Queiroz Castelo Branco - UC19101193
+// Final Project
+// Dev: Luiz Claudio dos Santos Cazarin Junior
 
 import java.awt.Color;
 import java.awt.Dialog.ModalExclusionType;
@@ -771,17 +769,9 @@ public class Principal extends JFrame {
 
 	}
 
-	public void testarInicio() {
-		this.adicionarJogador("Jose", "Brasileiro", "100.200.300.400", "vivo");
-		this.mostrarSituacaoJogador(1, "morto");
-		this.adicionarMensagem("oi");
-		this.adicionarMensagem("tudo bem?");
-	}
-
 	// ---------------------------------------------------------------------------------
 
 	public void adicionarJogador(String jogador, String civilizacao, String ip, String situacao) {
-
 		String[] linha = { jogador, civilizacao, ip, situacao };
 		// nome do jogador, civilizacao, ip do jogador os status do jogador no momento
 		this.tmJogadores.addRow(linha);
@@ -894,11 +884,6 @@ public class Principal extends JFrame {
 		this.tpJogo.setEnabledAt(1, false);
 	}
 
-	// ---------------------------------------------------------------------------------
-
-	// ************************************************************************
-	// *** Entrada=Apresentação - altera valores dos componentes **************
-
 	public void mostrarMensagemErro(String titulo, String mensagem) {
 		JOptionPane.showMessageDialog(null, mensagem, titulo, JOptionPane.ERROR_MESSAGE);
 	}
@@ -998,21 +983,15 @@ public class Principal extends JFrame {
 		this.tfTemplo.setText(acao);
 		this.tfTemplo.setBackground(cor);
 	}
-	// *** Saída=Ações/comandos - informa ação do usuário *********************
-	// *** Inicio ************************************************************
-	// ----------------------------------------------------------------------------
 
 	private void comandoCriarJogo(String nome, String civilizacao) {
 		boolean retorno;
 		if (nome.length() < 2) {
-			mostrarMensagemErro("Erro", "Informe um nome para o jogador");
+			mostrarMensagemErro("Erro", "Informe um nome valido para o jogador");
 			return;
 		}
-		retorno = true; // retorno da criação do jogo
+		retorno = true;
 		if (retorno) {
-			// Criamos o servidor
-			// Conectamos ao servidor
-
 			subirServidor = new Subir_Servidor(this);
 			subirServidor.start();
 			cliente = new ClienteTCP(this);
@@ -1034,7 +1013,7 @@ public class Principal extends JFrame {
 	}
 
 	private void comandoIniciarJogo() {
-		boolean retorno = true; // retorno da iniciação do jogo
+		boolean retorno = true;
 		if (retorno) {
 			this.base();
 			this.situacaoInicio = SituacaoInicio.CRIAR_INICIADO;
@@ -1063,7 +1042,7 @@ public class Principal extends JFrame {
 			mostrarMensagemErro("Erro", "Informe o IP do computador que criou o jogo");
 			return;
 		}
-		retorno = true; // retorno da conexão
+		retorno = true;
 		if (retorno) {
 			this.base();
 			cliente = new ClienteTCP(this);
@@ -1077,6 +1056,7 @@ public class Principal extends JFrame {
 	private void comandoDesconectar() {
 		this.cliente.desconectar();
 		this.limparJogadores();
+		// FAZER -> limpar o usuario da lista dos outros servidores
 		this.limparMensagens();
 		this.situacaoInicio = SituacaoInicio.INICIAL_CONECTAR;
 		this.habilitarInicio();
@@ -1088,10 +1068,6 @@ public class Principal extends JFrame {
 		tfMensagem.requestFocus();
 
 	}
-
-	// *** Saída=Ações/comandos - informa ação do usuário *********************
-	// *** Vila
-	// ****************************************************************--------------------------------
 
 	public void comandoAldeaoParar(int aldeao) {
 		if (aldeao == -1)

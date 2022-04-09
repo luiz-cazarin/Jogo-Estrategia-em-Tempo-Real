@@ -28,13 +28,6 @@ public class ClienteTCP extends Thread {
 		this.escutando = true;
 	}
 
-	public ClienteTCP(Socket porta, Principal tela, Jogador jogador) {
-		this.porta = porta;
-		this.tela = tela;
-		this.escutando = true;
-		this.jogador = jogador;
-	}
-
 	@SuppressWarnings("unchecked")
 	public void run() {
 		String mensagem;
